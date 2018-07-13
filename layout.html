@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Layout</title>
+    <style>
+        *{
+
+            box-sizing: border-box;
+
+        }
+        body{
+            padding:5px;
+            background-color: aqua;
+        }
+        .header{
+            background-color: azure;
+            padding:20px;
+            text-align:center;
+
+        }
+        .topnav{
+
+            overflow: hidden;
+            background-color: cadetblue;
+        }
+        .topnav ul{
+            list-style-type: none;
+            margin:0;
+            padding:0;
+        }
+        .topnav a{
+            float:left;
+            display:block;
+            text-align:center;
+            color: aliceblue;
+            padding: 14px;
+            text-decoration:none;
+        }
+        .topnav a:hover{
+            background-color: cornflowerblue;
+            color: whitesmoke;
+        }
+        .column{
+            float:left;
+            width: 33.33%;
+            padding:15px;
+
+        }
+        /*clear floats after column*/
+        .row::after{
+
+            content: "";
+            display:table;
+            clear:both;
+        }
+        .cols-15{
+            float:left;
+            width:15%;
+            padding:15px;
+        }
+        .cols-70{
+            width:70%;
+            padding:15px;
+        }
+        .cols-nav{
+            float:left;
+            width:15%;
+            padding:15px;
+        }
+        .footer{
+            margin-top: 5px;
+            background-color: burlywood;
+            color: darkmagenta;
+            text-align: center;
+            padding: 20px;
+
+        }
+        .row{
+            margin-top: 5px;
+        }
+        /*Responsive layout*/
+        @media screen and (max-width:600px) {
+            .column, .cols-15,.cols-15 {
+                width: 100%;
+            }
+
+            .cols-nav {
+                display: none;
+            }
+            #nav:focus .cols-nav{
+                display:block;
+                width: 100%;
+
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    HEADER
+</div>
+<div class="topnav">
+    <ul>
+        <li id="nav" ><a href="#"><img src="nest-menu-icon-hamburger.png" alt="image" height="10px"></a></li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">EVENTS</a></li>
+    </ul>
+</div>
+<div class="row" style="background-color: antiquewhite">
+    <div class="column">
+        <h3>Column 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+    <div class="column">
+        <h3>Column 2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+    <div class="column">
+        <h3>Column 3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+</div>
+
+<div class="row" style="background-color: coral">
+    <div class="cols-nav">SIDE-NAV<br>Lets see!<br>Lets see!<br>Lets see!</div>
+    <div class="cols-70">MAIN CONTENT<br>Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets see!</div>
+    <div class="cols-15">SIDE<br>Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets see! Lets eee!</div>
+</div>
+
+<div class="footer">
+    FOOTER:Contains copyrights and contact informationss.
+</div>
+</body>
+</html>
